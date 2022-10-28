@@ -2,7 +2,6 @@ import Tmdb from '../src/Tmdb'
 import MovieRow from '../src/components/MovieRow'
 
 export default function Home({list}) {
-    
   return (
     <div className='page'>
       <section className='lists'>
