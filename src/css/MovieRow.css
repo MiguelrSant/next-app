@@ -35,9 +35,10 @@
     transition: all ease 0.5s;
 }
 .movieRow--left, .movieRow--right{
+    width: 60px;
     position: absolute;
-    margin-top: 10px;
-    height: 180px;
+    margin-top: 5px;
+    height: 190px;
     background-color: rgba(0, 0, 0, .9);
     z-index: 998;
     display: flex;
@@ -47,6 +48,9 @@
     cursor: pointer;
     transition: all ease .2s;
     opacity: 0;
+}
+.movieRow--left p, .movieRow--right p{
+    font-size: 40px;
 }
 .movieRow--left:hover, .movieRow--right:hover{
     transform: scale(1.1);
