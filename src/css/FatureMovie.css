@@ -76,7 +76,7 @@
 
 @media (max-width:760px){
     .feature{
-        height: 90vh;
+        height: 99vh;
     }
     .feature--name{
         font-size: 40px;
@@ -94,5 +94,44 @@
     }
     .feature--genres{
         font-size: 14px;
+    }
+}
+
+@media (max-width:430px){
+    .feature--name{
+        margin-top: 10px;
+        font-size: 27px;
+    }
+    .fonture--info{
+        font-size: 16px;
+    }
+    .feature--descripition{
+        font-size: 14px;
+        max-width: 100%;
+        margin-right: 30px;
+    }
+    .btn1{
+        margin-bottom: 10px;
+    }
+    .btn1, .btn2{
+        font-size: 16px;
+        padding: 7px 25px;
+    }
+    .feature--genres{
+        font-size: 14px;
+
+    }
+    .movieRow{
+        margin-top: 30px;
+    }
+    .movieRow--left, .movieRow--right{
+        width: 30px;
+    }
+    .movieRow--left p, .movieRow--right p{
+        font-size: 15px;
+    }
+    .movieRow--listarea{
+        overflow-x: hidden;
+        padding-left: 10px;
     }
 }

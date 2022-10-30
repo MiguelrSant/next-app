@@ -1,8 +1,8 @@
 import Tmdb from '../src/Tmdb'
 import MovieRow from '../src/components/MovieRow'
 import FatureMovie from '../src/components/FatureMovie'
-import Head from '../src/components/Head'
-import Header from 'next/head'
+import Header from '../src/components/Header'
+import Head from 'next/head'
 import { useState, useEffect } from 'react'
 
 export default function Home({list, feature}) {
@@ -26,12 +26,13 @@ export default function Home({list, feature}) {
   return (
 
     <div className='page'>
-      <Head black={blackHeader}>
-        <title>This page has a title 🤔</title>
+      <Head leng='pt-br'>
+        <title>Netiflix</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <Header />
+
+      <Header black={blackHeader}/>
 
       {featureData &&
         <FatureMovie item={featureData} />
