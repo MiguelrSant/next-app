@@ -53,6 +53,25 @@ export default {
             },
 
         ]
+    },
+    getMovieinfo: async (MovieId, type) => {
+        let info = {}
+
+        if(MovieId) {
+            switch(type) {
+                case 'movie':
+                break
+                case 'tv':
+                    info = await basicFetch(`/tv/${MovieId}?language=pt-BR&api_key=${API_KEY}`)
+                break
+                default:
+                    info = null;
+                break
+            }
+        }
+        return info;
     }
 }
 
+// https://api.themoviedb.org/3/tv/1402?language=pt-BR&api_key=38c007f28d5b66f36b9c3cf8d8452a4b
+// https://api.themoviedb.org/3/movie/436270?language=pt-BR&api_key=38c007f28d5b66f36b9c3cf8d8452a4b
