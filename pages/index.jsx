@@ -1,8 +1,8 @@
 import Tmdb from '../src/Tmdb'
 import MovieRow from '../src/components/MovieRow'
 import FatureMovie from '../src/components/FatureMovie'
-import Header from '../src/components/Header'
-import Head from 'next/head'
+import Head from '../src/components/Head'
+import Header from 'next/head'
 import { useState, useEffect } from 'react'
 
 export default function Home({list, feature}) {
@@ -26,13 +26,12 @@ export default function Home({list, feature}) {
   return (
 
     <div className='page'>
-      <Head leng='pt-br'>
-        <title>Netiflix</title>
+      <Head black={blackHeader}>
+        <title>This page has a title 🤔</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-
-      <Header black={blackHeader}/>
+      <Header />
 
       {featureData &&
         <FatureMovie item={featureData} />
@@ -54,9 +53,13 @@ export default function Home({list, feature}) {
 
 
 export  async function getStaticProps()   {  
-    const list = await Tmdb.getHomeList()
+  const list = await Tmdb.getHomeList()
 
-    let chosenInfo = await Tmdb.getMovieinfo(113988, 'tv')
+  const originals = list.filter(i=>i.slug == 'originals')
+  let reamdomChosem = Math.floor(Math.random() * (20))
+  let chosen = originals[0].items.results[reamdomChosem]
+  let chosenId = chosen.id
+  let chosenInfo = await Tmdb.getMovieinfo(chosenId, 'tv')
     
 
     return {
@@ -64,6 +67,6 @@ export  async function getStaticProps()   {
             list,
             feature: chosenInfo
         },
-        revalidate: 86400
+        revalidate: 60
     }
 }

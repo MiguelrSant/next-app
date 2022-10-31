@@ -27,7 +27,11 @@ export default function FatureMovie({item}){
                     </div>
                     <div className="feature--descripition">{item.overview}</div>
                     <div className="feature--buttons">
-                        <a href={`#`} className='btn1'>▶ Assistir</a>
+<<<<<<< HEAD
+                        <a href={`/id/${item.id}`} className='btn1'>▶ Assistir</a>
+=======
+                        <a href={`/`} className='btn1'>▶ Assistir</a>
+>>>>>>> 1cda242c82adadad3b305f9569dbc387369b8ef0
                         <a href={`#`} className='btn2'>+ Minha Lista</a>
                     </div>
                     <div className="feature-genres"><strong>Gêneros: </strong> {genres.join(', ')}</div>
