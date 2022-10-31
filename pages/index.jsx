@@ -54,9 +54,13 @@ export default function Home({list, feature}) {
 
 
 export  async function getStaticProps()   {  
-    const list = await Tmdb.getHomeList()
+  const list = await Tmdb.getHomeList()
 
-    let chosenInfo = await Tmdb.getMovieinfo(113988, 'tv')
+  const originals = list.filter(i=>i.slug == 'originals')
+  let reamdomChosem = Math.floor(Math.random() * (20))
+  let chosen = originals[0].items.results[reamdomChosem]
+  let chosenId = chosen.id
+  let chosenInfo = await Tmdb.getMovieinfo(chosenId, 'tv')
     
 
     return {
@@ -64,6 +68,6 @@ export  async function getStaticProps()   {
             list,
             feature: chosenInfo
         },
-        revalidate: 86400
+        revalidate: 60
     }
 }
