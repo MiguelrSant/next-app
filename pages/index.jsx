@@ -62,7 +62,7 @@ export  async function getStaticProps()   {
     //let chosen = originals[0].items.results[reamdomChosem]
     // let chosenId = chosen.id
     // let chosenInfo = await Tmdb.getMovieinfo(chosenId, 'tv')
-    // let chosenInfo = await Tmdb.getMovieinfo(113988, 'tv')
+    let chosenInfo = await Tmdb.getMovieinfo(113988, 'tv')
     
 
     return {
